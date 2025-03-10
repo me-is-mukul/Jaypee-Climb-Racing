@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Jaypee_Climb_Racing.dir/link.d CMakeFiles/Jaypee_Climb_Racing.dir/src/main.cpp.o -o Jaypee_Climb_Racing  /usr/lib/libraylib.so -L/usr/lib -lraylib
