@@ -1,3 +1,0 @@
-/home/rottenpaintbrush/Desktop/Jaypee-Climb-Racing/build/CMakeFiles/Jaypee_Climb_Racing.dir
-/home/rottenpaintbrush/Desktop/Jaypee-Climb-Racing/build/CMakeFiles/edit_cache.dir
-/home/rottenpaintbrush/Desktop/Jaypee-Climb-Racing/build/CMakeFiles/rebuild_cache.dir
