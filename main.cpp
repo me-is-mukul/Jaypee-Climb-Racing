@@ -510,7 +510,7 @@ int main()
     int screenHeight = roadTex.height;
     SetWindowSize(screenWidth, screenHeight);
     SetWindowPosition(100,100); // Center the window
-    SetWindowTitle("Car Dodge Game - Ultimate Edition");
+    SetWindowTitle("team - mukul, ananya, aastha");
     SetTargetFPS(60);
     SetExitKey(KEY_NULL); // Disable default ESC to close window
     srand(time(0));
