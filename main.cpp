@@ -1,7 +1,3 @@
-// Car Dodge Game with Enhanced Features (Raylib)
-// Author: [Your Name] with AI Assistance
-// Project Version: Ultimate (Enhanced)
-
 #include "raylib.h"
 #include <vector>
 #include <string>
@@ -74,7 +70,7 @@ public:
     }
 };
 
-// Base GameObject
+
 struct GameObject
 {
     Rectangle rect;
@@ -214,16 +210,16 @@ public:
         if (type == "shield")
         {
             shield = true;
-            shieldTime = 5.0f;
+            shieldTime = 10.0f;
         }
         else if (type == "magnet")
         {
             magnet = true;
-            magnetTime = 7.0f;
+            magnetTime = 10.0f;
         }
         else if (type == "nitro")
         {
-            nitroTime = 3.0f;
+            nitroTime = 5.0f;
         }
     }
 
@@ -689,7 +685,7 @@ int main()
                 if (!c.active)
                     continue;
                 Vector2 playerCenter = {player.car.rect.x + 40, player.car.rect.y + 75};
-                if (player.magnet && CheckCollisionCircleRec(playerCenter, 100, c.rect))
+                if (player.magnet && CheckCollisionCircleRec(playerCenter, 800, c.rect))
                 {
                     Vector2 coinCenter = {c.rect.x + 20, c.rect.y + 20};
                     Vector2 dir = {playerCenter.x - coinCenter.x, playerCenter.y - coinCenter.y};
