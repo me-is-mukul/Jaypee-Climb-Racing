@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "build-raylib",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "-IC:/raylib/raylib/src",
+          "-LC:/raylib/raylib/src",
+          "main.cpp",
+          "-o",
+          "main.exe",
+          "-lraylib",
+          "-lopengl32",
+          "-lgdi32",
+          "-lwinmm"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+  

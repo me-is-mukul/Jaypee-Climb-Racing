@@ -1,7 +1,20 @@
-all: compile link
+# Compiler and flags
+CC = g++
+CFLAGS = -O2 -Wall
 
-compile:
-	g++ -Isrc/include -c main.cpp
+# Raylib paths (change if installed somewhere else)
+RAYLIB_DIR = C:/raylib/raylib/src
+INCLUDES = -I$(RAYLIB_DIR)
+LIBS = -L$(RAYLIB_DIR) -lraylib -lopengl32 -lgdi32 -lwinmm
 
-link:
-	g++ main.o -o main -Lsrc/lib -lsfml-graphics -lsfml-window -lsfml-system
+# Source and output
+SRC = main.cpp
+OUT = main.exe
+
+# Default target
+all:
+	$(CC) $(CFLAGS) $(INCLUDES) $(SRC) -o $(OUT) $(LIBS)
+
+# Clean target
+clean:
+	del $(OUT)
