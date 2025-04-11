@@ -8,7 +8,6 @@
 #include <algorithm>
 #include <fstream>
 
-// Utilities
 float Clamp(float value, float min, float max)
 {
     return fminf(fmaxf(value, min), max);
@@ -19,7 +18,6 @@ bool CheckOverlap(Rectangle a, Rectangle b)
     return CheckCollisionRecs(a, b);
 }
 
-// Particle System
 struct Particle
 {
     Vector2 pos;
@@ -78,7 +76,7 @@ struct GameObject
     bool active = true;
 };
 
-// Sound System
+
 class SoundManager
 {
 public:
@@ -127,7 +125,7 @@ private:
     Music bgMusic;
 };
 
-// Player Class
+
 class Player
 {
 public:
@@ -230,8 +228,6 @@ public:
     }
 };
 
-// Enemy Manager
-// Enemy Manager
 class EnemyManager
 {
 public:
@@ -251,7 +247,7 @@ public:
         if (spawnTimer >= 1.0f)
         {
             float x = leftLimit + rand() % (int)(rightLimit - leftLimit);
-            Texture2D chosen = textures[rand() % textures.size()]; // Fixed line
+            Texture2D chosen = textures[rand() % textures.size()];
             GameObject e = {{x, -160.0f, 80, 150}, chosen};
             enemies.push_back(e);
             spawnTimer = 0;
@@ -275,7 +271,7 @@ public:
     }
 };
 
-// Power-Up Manager
+
 class PowerUpManager
 {
 public:
@@ -336,7 +332,7 @@ public:
     }
 };
 
-// Coin Manager
+
 class CoinManager
 {
 public:
@@ -391,7 +387,7 @@ public:
     }
 };
 
-// HUD Manager
+
 class HUD
 {
 public:
@@ -420,7 +416,7 @@ public:
     }
 };
 
-// Leaderboard
+
 class Leaderboard
 {
 public:
@@ -464,7 +460,7 @@ public:
     }
 };
 
-// Settings Menu
+
 class Settings
 {
 public:
@@ -496,7 +492,7 @@ public:
     }
 };
 
-// Main Function
+
 int main()
 {
     InitWindow(1, 1, "Loading...");
@@ -505,13 +501,12 @@ int main()
     int screenWidth = roadTex.width;
     int screenHeight = roadTex.height;
     SetWindowSize(screenWidth, screenHeight);
-    SetWindowPosition(100,100); // Center the window
+    SetWindowPosition(100,100);
     SetWindowTitle("team - mukul, ananya, aastha");
     SetTargetFPS(60);
-    SetExitKey(KEY_NULL); // Disable default ESC to close window
+    SetExitKey(KEY_NULL);
     srand(time(0));
 
-    // Load assets
     SoundManager soundManager;
     std::vector<Texture2D> playerSkins = {LoadTexture("assets/player1.png"), LoadTexture("assets/player2.png"), LoadTexture("assets/player3.png")};
     std::vector<Texture2D> enemySkins = {LoadTexture("assets/enemy1.png"), LoadTexture("assets/enemy2.png"), LoadTexture("assets/enemy3.png")};
@@ -570,7 +565,7 @@ int main()
                 showLeaderboard = true;
                 startMenu = false;
             }
-            if (IsKeyPressed(KEY_Q)) // Explicit quit option
+            if (IsKeyPressed(KEY_Q))
                 break;
             continue;
         }
@@ -585,7 +580,7 @@ int main()
             if (IsKeyPressed(KEY_ESCAPE))
             {
                 settingsMenu = false;
-                startMenu = true; // Return to start menu
+                startMenu = true;
             }
             continue;
         }
