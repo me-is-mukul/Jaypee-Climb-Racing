@@ -196,18 +196,9 @@ The game’s visual assets create an immersive highway environment: \\
 
 Assets are loaded at initialization using \texttt{LoadTexture} and unloaded at program exit to prevent memory leaks. Audio effects, such as coin collection jingles and crash sounds, enhance feedback, loaded via \texttt{LoadSound} and played on specific events. Asset management was optimized by reusing textures for similar objects, reducing memory usage. \\
 
-\section{Code Structure}
-
 The codebase is modular, organized into separate files for maintainability and scalability: \\
 
-\begin{itemize}
-    \item \texttt{main.cpp}: Initializes Raylib, manages the game loop, and coordinates interactions between modules. \\
-    \item \texttt{player.cpp/.h}: Defines the player car’s properties (position, speed, hitbox) and methods (movement, power-up activation). \\
-    \item \texttt{enemy.cpp/.h}: Handles enemy car spawning, movement, and despawning when off-screen. \\
-    \item \texttt{powerup.cpp/.h}: Manages power-up spawning, collision effects, and timed durations for Shield, Magnet, and Nitro. \\
-    \item \texttt{coin.cpp/.h}: Controls coin spawning, collection logic, and score increments. \\
-    \item \texttt{score.cpp/.h}: Implements score tracking and file I/O for the leaderboard, using \texttt{fstream} to read/write high scores. \\
-\end{itemize}
+
 
 Classes use encapsulation to manage state, with public methods for interactions and private members for data integrity. This structure facilitated debugging and allowed team members to work on separate components concurrently. \\
 
